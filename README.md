@@ -1,6 +1,8 @@
 ### Rails application template
 
-Template ini lahir karena ketika ingin mencoba sesuatu (eksperiment) saya selalu membuat sebuah projek rails yang baru dan template default tidak sesuai untuk saya. *Current goal* template ini saat ini hanyalah untuk *replacement* Minitest dengan RSpec yang sudah include system spec-nya.
+Template ini lahir karena ketika ingin mencoba sesuatu (eksperiment) saya selalu membuat sebuah projek rails yang baru dan template default tidak sesuai untuk saya.
+
+*Current goal* template ini saat ini hanyalah untuk *replacement* Minitest dengan RSpec yang sudah include system spec-nya.
 
 Jika anda ingin menggunakannya, silahkan sesuaikan kode di `template.rb` sesuai dengan *local* anda.
 

@@ -17,17 +17,16 @@ end
 
 def add_web_drivers
   path = "#{BASE_PATH}/chromedriver"
-  run 'mkdir web_driver'
-  run "cp #{path} web_driver/chromedriver"
+  run 'mkdir web_drivers'
+  run "cp #{path} web_drivers/chromedriver"
 end
 
 def add_capybara_support
   path = "#{BASE_PATH}/capybara.rb"
-  run 'mkdir spec/support'
-  run "cp #{path} /spec/support/capybara.rb"
+  run 'mkdir support'
+  run "cp #{path} support/capybara.rb"
 end
 
-# Adding rubocop from inside spec dir
 def add_rubocop
   path = "#{BASE_PATH}/.rubocop.yml"
   run "cp #{path} .rubocop.yml"
