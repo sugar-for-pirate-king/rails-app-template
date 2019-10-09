@@ -16,19 +16,19 @@ def add_factory_bot_include_configuration
 end
 
 def add_web_drivers
-  path = "#{BASE_PATH}/chromedriver"
+  path = "#{BASE_PATH}/assets/chromedriver"
   run 'mkdir web_drivers'
   run "cp #{path} web_drivers/chromedriver"
 end
 
 def add_capybara_support
-  path = "#{BASE_PATH}/capybara.rb"
+  path = "#{BASE_PATH}/code/capybara.rb"
   run 'mkdir support'
   run "cp #{path} support/capybara.rb"
 end
 
 def add_rubocop
-  path = "#{BASE_PATH}/.rubocop.yml"
+  path = "#{BASE_PATH}/code/.rubocop.yml"
   run "cp #{path} .rubocop.yml"
 end
 
