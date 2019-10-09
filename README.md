@@ -15,3 +15,8 @@ $> rails new my-awesome-project -T -m rails-app-template/template.rb
 
 #### Contributing
 Silahkan request dengan *pull request* >//<
+
+#### License
+(Apache License 2.0)
+
+Copyright (c) 2019 Philip Lambok
