@@ -68,6 +68,14 @@ def initials_commit
   git commit: "-a -m 'Initial commit'"
 end
 
+def upgrade_yarn
+  run 'yarn upgrade'
+end
+
+def install_vue
+  run 'bundle exec rails webpacker:install:vue'
+end
+
 # main program
 gem 'pry-rails'
 gem_group :development, :test do
@@ -100,5 +108,7 @@ after_bundle do
     add_serializers
     add_values
   end
+  upgrade_yarn
+  install_vue
   initials_commit
 end
