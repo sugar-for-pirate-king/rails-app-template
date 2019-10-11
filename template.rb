@@ -76,6 +76,21 @@ def install_vue
   run 'bundle exec rails webpacker:install:vue'
 end
 
+def add_bootstrap
+  run 'yarn add bootstrap jquery popper.js'
+end
+
+def add_application_scss
+  file = File.open('application.scss', 'w')
+  file.puts "@import '~bootstrap/scss/bootstrap';"
+end
+
+def add_bootstrap_importer
+  gsub_file('application.js',
+            '// const imagePath = (name) => images(name, true)',
+            "// const imagePath = (name) => images(name, true)\nimport 'bootstrap'\nimport './src/application.scss'")
+end
+
 # main program
 gem 'pry-rails'
 gem_group :development, :test do
@@ -110,5 +125,12 @@ after_bundle do
   end
   upgrade_yarn
   install_vue
+  add_bootstrap
+  inside('app/javascript/packs/src') do
+    add_application_scss
+  end
+  inside('app/javascript/packs/') do
+    add_bootstrap_importer
+  end
   initials_commit
 end
