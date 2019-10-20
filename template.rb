@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-BASE_PATH = '/home/harukaedu/Codes/ruby/rails-template'
+BASE_PATH = '/home/harukaedu/Codes/ruby/rails-app-template'
 
 # methods definitions
 def actives_support_rspec

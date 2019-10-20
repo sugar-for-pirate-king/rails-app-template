@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 RSpec.configure do |config|
-  Selenium::WebDriver::Chrome.driver_path = "#{::Rails.root}/spec/web_drivers/chromedriver"
+  chrome = Selenium::WebDriver::Chrome::Service
+  chrome.driver_path = Rails.root.join('spec', 'web_drivers', 'chromedriver')
 
   config.before(:each, type: :system) do
     driven_by :rack_test
