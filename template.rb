@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-BASE_PATH = '/Users/mekari/Codes/ruby/rails-testing/rails-app-template'
+BASE_PATH = __dir__
 
 # methods definitions
 def actives_support_rspec
@@ -16,9 +16,9 @@ def add_factory_bot_include_configuration
 end
 
 def add_web_drivers
-  path = "#{BASE_PATH}/assets/chromedriver"
-  run 'mkdir web_drivers'
-  run "cp #{path} web_drivers/chromedriver"
+  gsub_file('rails_helper.rb',
+            'begin',
+            "require 'webdrivers'\nbegin")
 end
 
 def add_capybara_support
@@ -30,36 +30,6 @@ end
 def add_rubocop
   path = "#{BASE_PATH}/code/.rubocop.yml"
   run "cp #{path} .rubocop.yml"
-end
-
-def add_forms
-  run 'mkdir forms'
-  run 'cd forms && touch .keep'
-end
-
-def add_services
-  run 'mkdir services'
-  run 'cd services && touch .keep'
-end
-
-def add_policies
-  run 'mkdir policies'
-  run 'cd policies && touch .keep'
-end
-
-def add_presenters
-  run 'mkdir presenters'
-  run 'cd presenters && touch .keep'
-end
-
-def add_serializers
-  run 'mkdir serializers'
-  run 'cd serializers && touch .keep'
-end
-
-def add_values
-  run 'mkdir values'
-  run 'cd values && touch .keep'
 end
 
 def initials_commit
@@ -97,7 +67,7 @@ gem_group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'capybara'
-  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
 gem_group :developement do
   gem 'rubocop', require: false
@@ -115,22 +85,6 @@ after_bundle do
     add_factory_bot_include_configuration
   end
   add_rubocop
-  inside('app') do
-    add_forms
-    add_services
-    add_policies
-    add_presenters
-    add_serializers
-    add_values
-  end
   upgrade_yarn
   install_vue
-  add_bootstrap
-  inside('app/javascript/packs/src') do
-    add_application_scss
-  end
-  inside('app/javascript/packs/') do
-    add_bootstrap_importer
-  end
-  initials_commit
 end
