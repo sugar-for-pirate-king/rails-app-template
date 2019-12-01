@@ -22,13 +22,13 @@ def add_web_drivers
 end
 
 def add_capybara_support
-  path = "#{BASE_PATH}/code/capybara.rb"
+  path = "#{BASE_PATH}/src/capybara.rb"
   run 'mkdir support'
   run "cp #{path} support/capybara.rb"
 end
 
 def add_rubocop
-  path = "#{BASE_PATH}/code/.rubocop.yml"
+  path = "#{BASE_PATH}/src/.rubocop.yml"
   run "cp #{path} .rubocop.yml"
 end
 
