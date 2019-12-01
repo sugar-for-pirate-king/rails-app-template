@@ -1,8 +1,15 @@
-### Rails application template
+## Rails application template
 
 Rails template engine to help you creating new rails application includes some cute stuff.
 
-#### What you will get.
+### Usage
+
+```bash
+$> git clone git@github.com:sugar-for-pirate-king/rails-app-template.git
+$> rails new my-awesome-project -T -m rails-app-template/template.rb
+```
+
+### What do you got
 
 - RSpec, a testing framework in Ruby. From unit to system spec.
 - Factory Bot, A library for setting up Ruby objects as test data
@@ -11,18 +18,11 @@ Rails template engine to help you creating new rails application includes some c
 - Rubocop, a static analysis tools in Ruby.
 - Pry, a tool for debugging in Ruby.
 
-#### Usage
-
-```bash
-$> git clone git@github.com:sugar-for-pirate-king/rails-app-template.git
-$> rails new my-awesome-project -T -m rails-app-template/template.rb
-```
-
-#### Contributing
+### Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/sugar-for-pirate-king/rails-app-template. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org/) code of conduct.
 
-#### License
+### License
 
 (Apache License 2.0)
 
