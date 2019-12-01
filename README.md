@@ -1,12 +1,17 @@
 ### Rails application template
 
-Template ini lahir karena ketika ingin mencoba sesuatu (eksperiment) saya selalu membuat sebuah projek rails yang baru dan template default tidak sesuai untuk saya.
+Rails template engine to help you creating new rails application includes some cute stuff.
 
-*Current goal* template ini saat ini hanyalah untuk *replacement* Minitest dengan RSpec yang sudah include system spec-nya.
+#### What you will get.
 
-Jika anda ingin menggunakannya, silahkan sesuaikan kode di `template.rb` sesuai dengan *local* anda.
+- RSpec, a testing framework in Ruby. From unit to system spec.
+- Factory Bot, A library for setting up Ruby objects as test data
+- Vue.js, a javascript framework.
+- Bootstrap, a css framework.
+- Rubocop, a static analysis tools in Ruby.
+- Pry, a tool for debugging in Ruby.
 
-#### Cara menggunakannya
+#### Usage
 
 ```bash
 $> git clone git@github.com:sugar-for-pirate-king/rails-app-template.git
@@ -14,9 +19,11 @@ $> rails new my-awesome-project -T -m rails-app-template/template.rb
 ```
 
 #### Contributing
-Silahkan request dengan *pull request* >//<
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/sugar-for-pirate-king/rails-app-template. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org/) code of conduct.
 
 #### License
+
 (Apache License 2.0)
 
 Copyright (c) 2019 Philip Lambok
