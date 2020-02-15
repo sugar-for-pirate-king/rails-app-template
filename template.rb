@@ -87,4 +87,11 @@ after_bundle do
   add_rubocop
   upgrade_yarn
   install_vue
+  add_bootstrap
+  inside('app/javascript/packs/src') do
+    add_application_scss
+  end
+  inside('app/javascript/packs/') do
+    add_bootstrap_importer
+  end
 end
