@@ -61,6 +61,10 @@ def add_bootstrap_importer
             "// const imagePath = (name) => images(name, true)\nimport 'bootstrap'\nimport './src/application.scss'")
 end
 
+def fix_rubocop
+  run 'rubocop -a'
+end
+
 # main program
 gem 'pry-rails'
 gem_group :development, :test do
@@ -94,4 +98,5 @@ after_bundle do
   inside('app/javascript/packs/') do
     add_bootstrap_importer
   end
+  fix_rubocop
 end
